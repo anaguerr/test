@@ -1,0 +1,6 @@
+NODE ana_test_0
+SQL >
+    SELECT toDate(date) AS day, countState() AS c FROM test GROUP BY day
+
+TYPE MATERIALIZED
+DATASOURCE ana_test_0_mv

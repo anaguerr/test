@@ -1,0 +1,6 @@
+SCHEMA >
+    `day` Date,
+    `c` AggregateFunction(count)
+
+ENGINE AggregatingMergeTree
+ENGINE_SORTING_KEY day

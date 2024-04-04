@@ -1,0 +1,3 @@
+NODE untitled_pipe_6741_0
+SQL >
+    SELECT * FROM ana_test_0_mv
