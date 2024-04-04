@@ -1,0 +1,12 @@
+SCHEMA >
+    `date` DateTime `json:$.date`,
+    `event` String `json:$.event`,
+    `extra_data_city` String `json:$.extra_data.city`,
+    `product_id` String `json:$.product_id`,
+    `user_id` Int32 `json:$.user_id`,
+    `extra_data_term` Nullable(String) `json:$.extra_data.term`,
+    `extra_data_price` Nullable(Float32) `json:$.extra_data.price`
+
+ENGINE MergeTree
+ENGINE_PARTITION_KEY toYear(date)
+ENGINE_SORTING_KEY date, extra_data_city, product_id, user_id

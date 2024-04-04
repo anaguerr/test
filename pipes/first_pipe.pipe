@@ -1,0 +1,11 @@
+NODE first_node
+SQL >
+    %
+    SELECT * FROM events_100k WHERE event ={{ String(my_param, 'search') }}
+
+NODE second_node
+SQL >
+    SELECT toDate(date) AS day, countState() AS c FROM first_node GROUP BY day
+
+TYPE MATERIALIZED
+DATASOURCE second_node_mv

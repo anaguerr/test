@@ -1,0 +1,5 @@
+TOKEN "read_endpoint" READ
+
+NODE endpoint
+SQL >
+    SELECT distinct c FROM second_node_mv
